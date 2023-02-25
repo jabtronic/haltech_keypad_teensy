@@ -9,20 +9,20 @@ bool inputPinArray[16]; // array of the input pin states
 int  byteOne;         // this is first byte of CAN keypad buttons frame
 int  byteTwo;         // this is second byte of CAN keypad button frame
 
-#define btn1 0x1      // buttons 1-8 are in first byte and buttons 9-15 are in second byte
-#define btn2 0x2      // as an example, btn 1 is 00000001 and btn2 is 00000010
-#define btn3 0x4      // both buttons pressed would be 00000011 or 0x3 in HEX
-#define btn4 0x8      // button 3 is 00000100 (0x4) button5 is 00010000 (0x10) button 7 is 010000000 (0x40) etc
-#define btn5 0x10     // buttons 1-8 all pressed would be 11111111 (0xFF)
+#define btn1 0x1      // * Buttons 1-8 are in first byte and buttons 9-15 are in second byte
+#define btn2 0x2      // * As an example, btn 1 is 00000001 and btn2 is 00000010
+#define btn3 0x4      // * Both buttons pressed would be 00000011 or 0x3 in HEX
+#define btn4 0x8      // * Button 3 is 00000100 (0x4) button5 is 00010000 (0x10) button 7 is 010000000 (0x40) etc
+#define btn5 0x10     // * Example: buttons 1-8 all pressed would be 11111111 (0xFF)
 #define btn6 0x20
 #define btn7 0x40
 #define btn8 0x80
-#define btn9 0x1      // button 9 is 00000001 of the second byte, and so on
-#define btn10 0x2     // buttons 9-15 all pressed would be 01111111 (0x7F)
+#define btn9 0x1      // * Button 9 is 00000001 of the second byte, and so on
+#define btn10 0x2     // * Example: buttons 9-15 all pressed would be 01111111 (0x7F)
 #define btn11 0x4
 #define btn12 0x8
-#define btn13 0x10    // the can msg for keypad is 3 bytes and the third byte is empty
-#define btn14 0x20    // btns 1, 2, 5, 9, 15 all pressed is sent as 00010011 01000001 00000000
+#define btn13 0x10    // * The CAN msg for keypad is three bytes and the third byte is empty
+#define btn14 0x20    // * Example: btns 1, 2, 5, 9, 15 all pressed is sent as 00010011 01000001 00000000
 #define btn15 0x40
 
 void setup() {
@@ -188,7 +188,6 @@ void readInputPins() {
     }
   }                                 // digitalread(13) skipped due to onboard LED
   for (int i = 14; i < 16; i++) {
-    //Serial.println(i);
     if ( digitalRead(i) == LOW ) {  // LOW state means button is pressed
       inputPinArray[i] = true;
     } else {
