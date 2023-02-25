@@ -14,3 +14,6 @@ I'm not a programmer so don't expect this code to be perfect. I didn't bother im
 * [Pololu 5V, 500mA Step-Down Voltage Regulator D24V5F5](https://www.pololu.com/product/2843)
 * [Waveshare SN65HVD230 CAN Board/Transceiver](https://www.waveshare.com/sn65hvd230-can-board.htm)
 * Male Deutsch DTM-4 Connector
+
+### Dependancies
+[FlexCAN_T4 Library](https://github.com/tonton81/FlexCAN_T4) - https://github.com/tonton81/FlexCAN_T4
