@@ -1,13 +1,21 @@
 # haltech_keypad_teensy
 
-This code is designed to run on a Teensy4.0 and will emulate a Haltech 15 button CAN Keypad "B". 
+This program is designed to emulate a Haltech 15 button CAN Keypad "B". It runs on the Teensy4.0 Development Board. 
 
-It simply takes button inputs from 15 input pins and converts them as CAN keypad buttons broadcast over Haltech CAN network.
-You will need a Teensy 4.0, a 12v to 5v stepdown regulator, and a CANbus tranceiver.
+Credit to analoghan for the original code, I have just expanded on his sketch to include all 15 buttons and made it suitable for more generic use. 
+His sketch is here [haltech_keypad_emulator](https://github.com/analoghan/haltech_keypad_emulator) and [YouTube video here](https://www.youtube.com/watch?v=lhPgehjmZn4)
 
-Credit to @analoghan for this code I have just modified his program for more generic use. [haltech_keypad_emulator](https://github.com/analoghan/haltech_keypad_emulator)
+This program simply takes button inputs from 15 input pins and converts them as CAN keypad buttons to be broadcast over the Haltech CAN network.
 
-I'm not a programmer so don't expect this code to be perfect. I didn't bother implementing any button debouncing because I'm using heavy Knitter pushbutton switches.
+I'm not a programmer, I've tried to keep the code beginner friendly.
+
+You will need a Teensy4.0 board, a 12v to 5v stepdown regulator, and a CANbus tranceiver. 
+
+A standard Arduino is not fast enough for the CANbus to work.
+
+ezButton is utilised for button debouncing.
+
+
 
 ### Hardware I used
 * [Teensy4.0](https://www.pjrc.com/store/teensy40.html)
@@ -17,3 +25,5 @@ I'm not a programmer so don't expect this code to be perfect. I didn't bother im
 
 ### Dependancies
 [FlexCAN_T4 Library](https://github.com/tonton81/FlexCAN_T4) - https://github.com/tonton81/FlexCAN_T4
+
+[ezButton Library](https://github.com/ArduinoGetStarted/button) - https://github.com/ArduinoGetStarted/button
