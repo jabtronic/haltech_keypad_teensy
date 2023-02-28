@@ -8,13 +8,13 @@ CAN_message_t outgoing;   // outgoing CAN data with our buttons presses
 
 const byte NUM_EZBUTTONS = 16;  // size of the ezButton array
 ezButton ezButtonArray[] = {    //assign input pins to ezButton array for button debouncing
-  ezButton(0),
+  ezButton(0),                  
   ezButton(1),
   ezButton(2),
   ezButton(3),
   ezButton(4),
-  ezButton(5),
-  ezButton(6),
+  ezButton(5),                  // Buttons must be switched to GND
+  ezButton(6),                  // pinMode INPUT_PULLUP is default for ezButton
   ezButton(7),
   ezButton(8),
   ezButton(9),
